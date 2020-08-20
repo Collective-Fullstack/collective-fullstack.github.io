@@ -8,8 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import{Flex, NavLink, Grid, Box} from "theme-ui"
-
+import{Flex, Grid, Box} from "theme-ui"
+import NavBar from "./NavBar"
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -24,17 +24,7 @@ const Layout = ({ children }) => {
   return (
 
       <>
-      <Flex as='nav' px={[3,4]} py={4}>
-          <NavLink href='#!' pr={3} sx={{fontSize:3}} variant="nav">
-            Home
-          </NavLink>
-          <NavLink href='https://github.com/collective-fullstack' pr={3} sx={{fontSize:3}}>
-            Github
-          </NavLink>
-          <NavLink href='https://www.freelancer.com/u/ColFul' pr={3} sx={{fontSize:3}}>
-            Freelancer.com
-          </NavLink>
-        </Flex>
+          <NavBar></NavBar>
         <Grid
           gap={2}
           columns={[[1, '1fr'],[2, '2fr 1fr'],[2, '1.5fr 1fr']]}>
