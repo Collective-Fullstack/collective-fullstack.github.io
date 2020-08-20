@@ -47,10 +47,14 @@ const Footer = () => {
   return (
     <Box backgroundColor="text" color="background" px={[3, 4]} py={4} >
         <Heading sx={{fontSize:5}}>Collective Fullstack</Heading>
-      <Grid gap={3} columns={[2, [3,"1fr 1fr 2fr"]]} mt={3}>
+      <Grid gap={[2,3]} columns={[1,2]} mt={3}>
+        <Grid gap={[2,3]} columns={[1,1,2]}>
         <Links components={components}></Links>
-        <Box  sx={{textAlign:["left","right"], fontSize: [1,2]}}>
-            Copyright (c) 2020 Collective Fullstack
+
+        </Grid>
+        <Box sx={{textAlign:["left","right"], fontSize: [1,2]}}>
+            <Text>Copyright (c) 2020 Collective Fullstack</Text>
+            <Text mt={2}>Collective Fullstack acknowledges the Traditional Custodians of the land and waters of Australia, and pay respect to all Elders - past, present and emerging. We acknowledge that sovereignty has never ceded.</Text>
         </Box>
       </Grid>
     </Box>
