@@ -10,6 +10,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import{Flex, Grid, Box} from "theme-ui"
 import NavBar from "./NavBar"
+import Footer from "./Footer"
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -24,12 +26,19 @@ const Layout = ({ children }) => {
   return (
 
       <>
-          <NavBar></NavBar>
+        <Box sx={{
+          minHeight:"100vh"
+        }}>
+        <NavBar></NavBar>
         <Grid
           gap={2}
           columns={[[1, '1fr'],[2, '2fr 1fr'],[2, '1.5fr 1fr']]}>
           <Box>{children}</Box>
-        </Grid>
+        </Grid> 
+        </Box>
+        
+        <Footer></Footer>
+
       </>
         
   )

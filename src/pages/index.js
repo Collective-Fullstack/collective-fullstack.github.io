@@ -4,7 +4,8 @@ import Layout from "../components/layout"
 import BigBoxLink from "../components/BigBoxLink"
 import { Helmet } from 'react-helmet'
 import Head from "../components/Head"
-const IndexPage = () => (
+import {graphql} from "gatsby"
+const IndexPage = ({data}) => (
   <Layout>
     <Head></Head>
     <Box bg='secondary' color="background"  p={[3,4]} mb={3}>
@@ -23,10 +24,33 @@ const IndexPage = () => (
       <BigBoxLink href="https://github.com/ehne" name="Darcy"></BigBoxLink>
       <BigBoxLink href="https://github.com/midataur" name="Max"></BigBoxLink>
     </Grid>
-
+    {/* <Grid gap={3}
+    columns={[1,2,3]}>
+        {
+          data.allFile.nodes.map((post,i)=>
+            <Box>{post.childMdx.slug}</Box>
+          )
+        }
+    </Grid> */}
+    
 
     
   </Layout>
 )
 
+export const worksPostQuery = graphql`
+query worksQuery {
+  allFile(filter: {name: {}, sourceInstanceName: {eq: "work-posts"}}, limit: 3) {
+    nodes {
+      childMdx {
+        frontmatter {
+          title
+        }
+        slug
+      }
+    }
+    totalCount
+  }
+}
+`
 export default IndexPage
