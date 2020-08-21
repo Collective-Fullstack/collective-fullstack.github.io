@@ -15,7 +15,6 @@ const components = {
     })
     const flattened = flattenLinks(nested)
     //console.log(flattened)
-
     return (
       <>
         {flattened.map((link, i) => (
@@ -27,7 +26,7 @@ const components = {
 }
 const NavBar = () => {
   return (
-    <Flex as="nav" px={[3, 4]} py={4}>
+    <Flex as="nav" px={[3, 4]} py={4} sx={{flexWrap:"wrap"}}>
       <Links components={components}></Links>
     </Flex>
   )

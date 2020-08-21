@@ -8,10 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import{Flex, Grid, Box} from "theme-ui"
+import{Flex, Grid, Box, ThemeProvider} from "theme-ui"
 import NavBar from "./NavBar"
 import Footer from "./Footer"
-
+import theme from "../gatsby-plugin-theme-ui/index"
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
         <NavBar></NavBar>
         <Grid
           gap={2}
-          columns={[[1, '1fr'],[2, '2fr 1fr'],[2, '1.5fr 1fr']]}>
+          columns={[[1, '1fr'],[2, '3fr 1fr'],[2, '1fr 1fr']]}>
           <Box>{children}</Box>
         </Grid> 
         </Box>

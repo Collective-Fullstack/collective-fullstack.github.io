@@ -5,7 +5,7 @@ module.exports = {
     author: `Collective Fullstack`,
   },
   plugins: [
-    "gatsby-plugin-theme-ui",
+    'gatsby-plugin-theme-ui',
     'gatsby-theme-style-guide',
     `gatsby-plugin-react-helmet`,
     {
@@ -17,7 +17,14 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          "work-posts": require.resolve("./src/components/WorkPageLayout.js"),
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

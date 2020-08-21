@@ -1,10 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet'
-const Head = (props) => {
+const Head = ({title, extra=""}) => {
     return (
         <Helmet>
                 <meta charSet="utf-8" />
-                    <title>Collective Fullstack - Web Developers</title>
+    <title>{title}</title>
                     <meta name="title" content="Collective Fullstack - Web Developers"/>
                     <meta name="description" content="We are a small two person freelance company who specialize in web development. Previous work includes building everything from environmental monitoring systems to chat clients."/>
 
@@ -19,6 +19,7 @@ const Head = (props) => {
                     <meta property="twitter:title" content="Collective Fullstack - Web Developers"/>
                     <meta property="twitter:description" content="We are a small two person freelance company who specialize in web development. Previous work includes building everything from environmental monitoring systems to chat clients."/>
                     <meta property="twitter:image" content="https://collective-fullstack.github.io/og-card.png"/>
+                
         </Helmet>
     );
 }
