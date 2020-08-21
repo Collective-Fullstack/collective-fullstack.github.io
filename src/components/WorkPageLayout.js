@@ -16,7 +16,8 @@ const components = {
     p:props=>(<Text mb={3} paddingX={[3,4]} sx={{fontSize:2}}>{props.children}</Text>),
     FullImage,
     Box,
-    Images
+    Images,
+    img:Image
     
 }
 const WorkPageLayout = (props) => {
@@ -26,7 +27,7 @@ const WorkPageLayout = (props) => {
         <Layout>
           <Head title={`${fm.title} | Collective Fullstack - Web Developers`}></Head>
                 <Box bg='secondary' color="background"  p={[3,4]} mb={3}>
-                    <Heading sx={{fontSize:7}} width="100%">{fm.title}</Heading>
+                    <Heading sx={{fontSize:[6,7]}} width="100%">{fm.title}</Heading>
                     <Text sx={{fontSize:3}}>{fm.leadIn}</Text>
                 </Box>
                 <Images><Image src={fm.mainImage}/></Images>

@@ -11,7 +11,7 @@ const IndexPage = () => (
   <Layout>
     <Head title="Collective Fullstack - Web Developers"></Head>
     <Box bg='secondary' color="background"  p={[3,4]} mb={3}>
-      <Heading sx={{fontSize:7}}>Collective Fullstack</Heading>
+      <Heading sx={{fontSize:[6,7]}}>Collective Fullstack</Heading>
       <Text sx={{fontSize:3}}>We are a small two person freelance company who specialize in web development. Previous work includes building everything from environmental monitoring systems to chat clients.</Text>
     </Box>
     <Grid
