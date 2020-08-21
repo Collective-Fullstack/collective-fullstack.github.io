@@ -54,7 +54,7 @@ const Footer = () => {
         </Grid>
         <Box sx={{textAlign:["left","right"], fontSize: [1,2]}}>
             <Text>Copyright (c) 2020 Collective Fullstack</Text>
-            <Text mt={2}>Collective Fullstack acknowledges the Traditional Custodians of the land and waters of Australia, and pay respect to all Elders - past, present and emerging. We acknowledge that sovereignty has never ceded.</Text>
+            <Text mt={2}>Collective Fullstack acknowledges the Traditional Custodians of the land and waters of Australia, and pay respect to all Elders - past, present and emerging. We acknowledge that sovereignty was never ceded.</Text>
         </Box>
       </Grid>
     </Box>
