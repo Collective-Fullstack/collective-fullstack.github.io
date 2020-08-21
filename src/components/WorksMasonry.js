@@ -9,44 +9,40 @@ const chunk = (arr, size) =>
 
 const WorksMasonry = () => {
   const data = useStaticQuery(graphql`
-    query worksQuery {
-      allFile(filter: { name: {}, sourceInstanceName: { eq: "work-posts" } }) {
-        nodes {
-          childMdx {
-            slug
-            frontmatter {
-              title
-              thumb
-              leadIn
+      query worksQuery {
+        allMdx(sort: {fields: frontmatter___year, order: DESC}) {
+          edges {
+            node {
+              slug
+              frontmatter {
+                leadIn
+                thumb
+                title
+                year
+              }
             }
           }
+          totalCount
         }
-        totalCount
       }
-    }
   `)
   console.log(data)
-  let d = data.allFile.nodes
-  const chunkedData = chunk(d, 3)
-  const generatedWalls = chunkedData.map((i, index) => {
-    const generatedCards = i.map((j, jindex) => {
-      /* const gridArea =  ["main", "sidetop", "sidebottom"][jindex]
-      const align =  ["stretch","start","end"][jindex]  */
-      const mdxInfo = j.childMdx
-      return (
-        <Box sx={{ }}>
-          <WorkCard
-            href={`/work/${mdxInfo.slug}`}
-            title={mdxInfo.frontmatter.title}
-            leadIn={mdxInfo.frontmatter.leadIn}
-            image={mdxInfo.frontmatter.thumb}
-          ></WorkCard>
-        </Box>
-      )
-    })
-  return(
-  <Grid columns={[2]}>{generatedCards}</Grid> 
-  )
+  let d = data.allMdx.edges
+  const generatedCards = d.map((n,index)=>{
+    const node = n.node;
+    const fm = node.frontmatter
+    return (
+      <Box>
+        <WorkCard
+          href={`/work/${node.slug}`}
+          title={fm.title}
+          leadIn={fm.leadIn}
+          image={fm.thumb}
+        ></WorkCard>
+      </Box>
+    )
+  })
+
     /* <Box
         sx={{
           display: "grid",
@@ -60,9 +56,9 @@ const WorksMasonry = () => {
       >
         {generatedCards}
       </Box> */
-  })
 
-  return <>{generatedWalls}</>
+
+  return <Grid columns={[2]}>{generatedCards}</Grid>
 }
 
 export default WorksMasonry
