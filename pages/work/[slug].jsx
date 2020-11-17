@@ -3,7 +3,12 @@ import React from 'react';
 import { getAllPosts, getPostBySlug } from '../../lib/api';
 
 function workPage({ post }) {
-  return (<div>{post.content}</div>);
+  return (
+    <div>
+      {JSON.stringify(post)}
+
+    </div>
+  );
 }
 
 export async function getStaticPaths() {
@@ -22,13 +27,15 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, [
-    'title',
-    'date',
     'slug',
-    'author',
     'content',
-    'ogImage',
-    'coverImage',
+    //
+    'title',
+    'mainImage',
+    'leadIn',
+    'date',
+    'skills',
+    'links',
   ]);
 
   return {
