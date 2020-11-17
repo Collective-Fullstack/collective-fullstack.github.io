@@ -1,0 +1,26 @@
+{
+  "name": "cf-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Collective-Fullstack/collective-fullstack.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Collective-Fullstack/collective-fullstack.github.io/issues"
+  },
+  "homepage": "https://github.com/Collective-Fullstack/collective-fullstack.github.io#readme",
+  "dependencies": {
+    "next": "^10.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
