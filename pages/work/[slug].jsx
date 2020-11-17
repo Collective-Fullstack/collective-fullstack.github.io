@@ -1,12 +1,16 @@
 import React from 'react';
+import sanitizeHtml from 'sanitize-html';
 
 import { getAllPosts, getPostBySlug } from '../../lib/api';
+import micromarkupParse from '../../lib/mm';
 
 function workPage({ post }) {
   return (
     <div>
       {JSON.stringify(post)}
-
+      <br />
+      { /* eslint-disable-next-line react/no-danger */ }
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
     </div>
   );
 }
@@ -37,11 +41,13 @@ export async function getStaticProps({ params }) {
     'skills',
     'links',
   ]);
-
+  // BEEP BEPP SANITISE YOUR HTML TEXT OTHERWISE XSSSSSSS!!!
+  const content = sanitizeHtml(micromarkupParse(post.content));
   return {
     props: {
       post: {
         ...post,
+        content,
       },
     },
   };
