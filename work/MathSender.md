@@ -13,7 +13,7 @@ skills: Website design, Website development, Python development.
 ---
 
 
-MathSender is a tool desgined to help teachers ask maths questions to students during online learning. Born out of how garbage sending equations via Webex text chat is, MathSender provides a way to send beautiful LaTeX based expressions in real time via a question and answer system.
+MathSender is a tool designed to help teachers ask maths questions to students during online learning. Born out of how garbage sending equations via Webex text chat is, MathSender provides a way to send beautiful LaTeX based expressions in real time via a question and answer system.
 
 
 **MathSender is proudly open-access.**
