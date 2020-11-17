@@ -3,12 +3,14 @@ import * as React from 'react';
 import { ChakraProvider, Box } from '@chakra-ui/react';
 
 import theme from '../lib/theme';
+import Footer from '../components/layout/Footer';
 
 const AppContainer = ({ Component, pageProps }) => (
   <ChakraProvider theme={theme}>
     <Box m={2}>
       <Component {...pageProps} />
     </Box>
+    <Footer />
   </ChakraProvider>
 );
 
