@@ -1,27 +1,23 @@
 import React from 'react';
 
-import fs from 'fs';
-import path from 'path';
+import { getAllPosts } from '../lib/api';
 
-function HomePage({ filenames }) {
+function HomePage({ allPosts }) {
   return (
     <div>
       Welcome to Next.js!
-      {filenames}
+      {allPosts.map((i) => (<a href={`/work/${i.slug}`}>{i.slug}</a>))}
     </div>
   );
 }
 
 export async function getStaticProps() {
-  // fetches the posts in the directory "work"
-  const postsDirectory = path.join(process.cwd(), 'work');
-  // because this stuff is done in the build step, we can use just normal node stuff.
-  const filenames = fs.readdirSync(postsDirectory);
-
+  // uses the funky function to get the slugs
+  const allPosts = getAllPosts(['slug']);
   // return the filenames as a prop
   return {
     props: {
-      filenames,
+      allPosts,
     },
   };
 }
