@@ -1,13 +1,14 @@
 import React from 'react';
+import { Box } from '@chakra-ui/react';
 
 import { getAllPosts } from '../lib/api';
+import Link from '../components/Link';
 
 function HomePage({ allPosts }) {
   return (
-    <div>
-      Welcome to Next.js!
-      {allPosts.map((i) => (<a href={`/work/${i.slug}`}>{i.slug}</a>))}
-    </div>
+    <Box>
+      {allPosts.map((i) => <Link href={`/work/${i.slug}`} isExternal={false}>{i.slug}</Link>)}
+    </Box>
   );
 }
 
