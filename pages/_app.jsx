@@ -7,7 +7,7 @@ import Footer from '../components/layout/Footer';
 
 const AppContainer = ({ Component, pageProps }) => (
   <ChakraProvider theme={theme}>
-    <Box m={2}>
+    <Box m={2} minH="95vh">
       <Component {...pageProps} />
     </Box>
     <Footer />
