@@ -1,24 +1,43 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
+import { SimpleGrid } from '@chakra-ui/react';
 
-import { getAllPosts } from '../lib/api';
-import Link from '../components/Link';
+import { getAllPosts, getPostBySlug } from '../lib/api';
+import { PostLink } from '../components';
 
-function HomePage({ allPosts }) {
+function HomePage({ postData }) {
   return (
-    <Box>
-      {allPosts.map((i) => <Link href={`/work/${i.slug}`} isExternal={false}>{i.slug}</Link>)}
-    </Box>
+    <SimpleGrid columns={[1, 1, 2, 3]} spacing={4}>
+      {postData.map((i) => (
+        <PostLink
+          slug={i.slug}
+          title={i.title}
+          leadIn={i.leadIn}
+          thumb={i.thumb}
+          key={i.slug}
+        />
+      ))}
+    </SimpleGrid>
   );
 }
 
 export async function getStaticProps() {
   // uses the funky function to get the slugs
   const allPosts = getAllPosts(['slug']);
+  // this is where they should be sorted by date.
+  const postData = allPosts.map((i) => getPostBySlug(i.slug, [
+    'slug',
+    'title',
+    'thumb',
+    'leadIn',
+  ]));
   // return the filenames as a prop
   return {
     props: {
-      allPosts,
+      postData,
+      heading: {
+        headline: 'Collective Fullstack',
+        byline: 'We are a small two person freelance company who specialize in web development. Previous work includes building everything from environmental monitoring systems to chat clients.',
+      },
     },
   };
 }

@@ -1,8 +1,17 @@
 ---
 title: MathSender
 thumb: "/s-images/work/MathSender/MathSenderThumb.png"
-mainImage: "/s-images/work/MathSender/MathSenderLogo.png"
 leadIn: Visual identity and website development for an online learning system.
+mainImage: "/s-images/work/MathSender/MathSenderLogo.png"
+images:
+    - src: "/s-images/work/MathSender/MathSenderFavicons.png"
+      alt: Website Icons
+    - src: /s-images/work/MathSender/MathSenderConceptLogos.png
+      alt: Some concept logos
+    - src: /s-images/work/MathSender/MathSenderColours.png
+      alt: The colours of electric blue and yellow were chosen as the accent colours for MathSender.
+    - src: /s-images/work/MathSender/MathSenderHomepage.png
+      alt: The MathSender homepage
 links:
     - text: Github
       href: "https://github.com/midataur/mathsender"

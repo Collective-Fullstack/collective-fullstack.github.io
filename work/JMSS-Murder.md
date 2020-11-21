@@ -6,7 +6,7 @@ leadIn: Design and development of a score tracking system for a real-life game.
 links:
     - text: Github
       href: "https://github.com/midataur/jmss-murder-board"
-year: "2019.09"
+date: "2019.09"
 skills: Brand identity, Website design, Website development, Python development, Graphic design.
 ---
 

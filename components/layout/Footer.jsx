@@ -13,7 +13,7 @@ import { navLinks, personLinks } from '../../lib/links';
 const LinkList = ({ linkArr }) => {
   const MappedLinks = linkArr.map((i) => (
     <ListItem>
-      <Link href={i[1]} isExternal={[2]}>{i[0]}</Link>
+      <Link href={i[1]} isExternal={i[2]}>{i[0]}</Link>
     </ListItem>
   ));
 
