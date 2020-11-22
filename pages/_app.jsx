@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react';
 
 import theme from '../lib/theme';
-import { Footer, Navbar } from '../components';
+import { Footer, Navbar, Head } from '../components';
 
 const AppContainer = ({ Component, pageProps }) => {
   // ideally this would use the useTheme hook.
@@ -13,8 +13,13 @@ const AppContainer = ({ Component, pageProps }) => {
   const [bgColor, primaryColor] = ['#06060e', '#FF4019'];
 
   const bgString = `linear-gradient(90deg, ${bgColor} 21px, transparent 1%) center, linear-gradient(${bgColor} 21px, transparent 1%) center, ${primaryColor}`;
+
+  const title = pageProps.isHomepage
+    ? 'Collective Fullstack - Web Developers'
+    : `${pageProps.heading.headline} | Collective Fullstack - Web Developers`;
   return (
     <ChakraProvider theme={theme}>
+      <Head title={title} />
       <Navbar isHomepage={pageProps.isHomepage} />
       {/* <ResponsiveIndicator /> */}
       {/* Comment ^ out on production builds */}
