@@ -12,8 +12,8 @@ import { navLinks, personLinks } from '../../lib/links';
 
 const LinkList = ({ linkArr }) => {
   const MappedLinks = linkArr.map((i) => (
-    <ListItem>
-      <Link href={i[1]} isExternal={i[2]}>{i[0]}</Link>
+    <ListItem key={`${i[1]}-footer`}>
+      <Link href={i[1]} isExternal={i[2]} textDecoration="underline" _hover={{ opacity: 0.7 }}>{i[0]}</Link>
     </ListItem>
   ));
 
