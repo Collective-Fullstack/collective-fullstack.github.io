@@ -29,12 +29,12 @@ export default function Footer() {
     <Box
       bg="brand.secondary"
       color="white"
-      p={8}
-      py={10}
+      px={8}
+      pt={10}
     >
       <Heading as="h4" size="xl" fontWeight="700">Collective Fullstack</Heading>
-      <SimpleGrid columns={[1, 2]} spacing={4} mt={4}>
-        <SimpleGrid columns={[1, 2]} spacing={4} fontSize="lg">
+      <SimpleGrid columns={[1, null, 2]} spacing={4} mt={4}>
+        <SimpleGrid columns={[1, 2]} spacing={4} fontSize="lg" mb={4}>
           <Box>
             <LinkList linkArr={navLinks} />
           </Box>
@@ -42,7 +42,7 @@ export default function Footer() {
             <LinkList linkArr={personLinks} />
           </Box>
         </SimpleGrid>
-        <Box fontSize="md" textAlign={['left', 'right']}>
+        <Box fontSize="md" textAlign={['left', null, 'right']}>
           <Text>
             Copyright (c) 2020 Collective Fullstack
           </Text>
