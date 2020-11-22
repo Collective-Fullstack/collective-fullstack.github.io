@@ -9,10 +9,11 @@ import { Link } from '../../components';
 
 function workPage({ post }) {
   const Images = post.images ? post.images.map((i) => (
-    <Box borderWidth="2px" borderColor="gray.200">
+    <Box borderWidth="2px" borderColor="gray.200" key={`sImage-${i.src}`}>
       <Img src={i.src} alt={i.alt} width="100%" />
     </Box>
   )) : '';
+
   return (
     <Box fontSize={['md', 'lg']}>
       <Stack spacing={4} width={['100%', '100%', '70%']} mx="auto">
