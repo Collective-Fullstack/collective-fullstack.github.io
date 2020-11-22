@@ -32,7 +32,7 @@ function workPage({ post }) {
           <Text>
             <b>Links: </b>
             {post.links.map((i) => (
-              <Link href={i.href} textDecoration="underline" mr={2} key={i.href}>{i.text}</Link>
+              <Link href={i.href} textDecoration="underline" mr={2} key={i.href} isExternal>{i.text}</Link>
             ))}
           </Text>
         </Box>
