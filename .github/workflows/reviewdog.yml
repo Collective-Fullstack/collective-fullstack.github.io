@@ -15,4 +15,5 @@ jobs:
         with:
           reporter: github-check 
           eslint_flags: './components/** ./lib/** ./pages/**'
+          github_token: ${{ secrets.GATSBY_ACCESS_TOKEN }}
      
