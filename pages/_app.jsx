@@ -15,8 +15,8 @@ const AppContainer = ({ Component, pageProps }) => {
   const bgString = `linear-gradient(90deg, ${bgColor} 21px, transparent 1%) center, linear-gradient(${bgColor} 21px, transparent 1%) center, ${primaryColor}`;
   return (
     <ChakraProvider theme={theme}>
-      <Navbar />
-      <ResponsiveIndicator />
+      <Navbar isHomepage={pageProps.isHomepage} />
+      {/* <ResponsiveIndicator /> */}
       {/* Comment ^ out on production builds */}
       <Box
         minHeight="100vh"
@@ -24,7 +24,7 @@ const AppContainer = ({ Component, pageProps }) => {
         backgroundSize="22px 22px"
       >
         <Box p={[4, 8]}>
-          <Flex minHeight="50vh" alignItems="flex-end" mb={[4, 8]}>
+          <Flex minHeight="60vh" pt="50vh" alignItems="flex-end" mb={[4, 8]}>
             <Box width={['100%', '90%', '80%', '60%']}>
               <Heading as="h1" size="3xl" mb={1}>{pageProps.heading.headline}</Heading>
               <Text fontSize={['lg', 'xl']}>

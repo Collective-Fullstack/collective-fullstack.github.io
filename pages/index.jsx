@@ -38,6 +38,7 @@ export async function getStaticProps() {
         headline: 'Collective Fullstack',
         byline: 'We are a small two person freelance company who specialize in web development. Previous work includes building everything from environmental monitoring systems to chat clients.',
       },
+      isHomepage: true,
     },
   };
 }

@@ -77,6 +77,7 @@ export async function getStaticProps({ params }) {
       post: {
         ...post,
       },
+      isHomepage: false,
     },
   };
 }
