@@ -1,0 +1,18 @@
+name: reviewdog check
+on:
+  push:
+    branches:
+      - "v2"
+
+jobs:
+  eslint:
+    name: runner / eslint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: eslint
+        uses: reviewdog/action-eslint@v1
+        with:
+          reporter: github-check 
+          eslint_flags: '"./components/**" "./lib/**" "./pages/**"'
+     
