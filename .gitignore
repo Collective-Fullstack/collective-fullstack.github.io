@@ -70,3 +70,6 @@ yarn-error.log
 # next files
 .next
 out
+
+.vscode
+.nova
