@@ -6,8 +6,8 @@ import {
 } from '@chakra-ui/react';
 import { MdMenu } from 'react-icons/md';
 
-import { navLinks } from '../lib/links';
-import Link from './Link';
+import { navLinks } from '../../lib/links';
+import Link from '../Link';
 
 const NavContainer = ({ children, display, ...rest }) => (
   <Box
@@ -27,20 +27,6 @@ const NavContainer = ({ children, display, ...rest }) => (
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // link gen
-  const links = navLinks.map((i) => (
-    <Link
-      href={i[1]}
-      isExternal={i[2]}
-      fontWeight="bold"
-      mr={2}
-      p={2}
-      _hover={{ opacity: 0.7 }}
-    >
-      {i[0]}
-    </Link>
-  ));
-
   return (
     <>
       <NavContainer display={{
@@ -58,7 +44,20 @@ const Navbar = () => {
         </Box>
         <Box flexGrow="1" />
         <Flex flexWrap="wrap">
-          {links}
+          {navLinks.map((i) => (
+            <Box key={`${i[1]}-navbar-md`}>
+              <Link
+                href={i[1]}
+                isExternal={i[2]}
+                fontWeight="bold"
+                mr={2}
+                p={2}
+                _hover={{ opacity: 0.7 }}
+              >
+                {i[0]}
+              </Link>
+            </Box>
+          ))}
         </Flex>
       </NavContainer>
       <NavContainer
@@ -99,7 +98,7 @@ const Navbar = () => {
           <DrawerCloseButton color="background" borderRadius="none" />
           <DrawerBody color="background">
             {navLinks.map((i) => (
-              <Box>
+              <Box key={`${i[1]}-navbar-base`}>
                 <Link
                   href={i[1]}
                   isExternal={i[2]}
