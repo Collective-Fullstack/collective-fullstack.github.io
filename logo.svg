@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="727px" height="727px" viewBox="0 0 727 727" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logo2</title>
+    <g id="new-logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-Copy" transform="translate(-239.000000, -207.000000)">
+            <g id="logo2" transform="translate(239.000000, 207.000000)">
+                <rect id="Rectangle" fill="#FF4019" x="0" y="0" width="727" height="727"></rect>
+                <path d="M585,182 L585,233 L411.5,233 L411.5,309 L585,309 L585,360 L411.5,360 L411.5,544.5 L360.5,544.5 L360.5,182.5 L361,182.5 L361,182 L585,182 Z M348,309 L348,360 L191.999,360 L192,493 L348,493 L348,544 L141,544 L141,309 L348,309 Z" id="cf-shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
