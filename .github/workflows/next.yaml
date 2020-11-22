@@ -30,12 +30,7 @@ jobs:
       - run: npm run export
         env:
             CI: true
-
-      - name: copy .nojekyll
-        uses: canastro/copy-file-action@master
-        with:
-          source: "./.nojekyll"
-          target: "/out/.nojekyll"
+      - run: touch /out/.nojekyll
         
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
