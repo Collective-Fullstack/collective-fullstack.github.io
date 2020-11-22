@@ -29,7 +29,9 @@ export async function getStaticProps() {
     'title',
     'thumb',
     'leadIn',
+    'date',
   ]));
+  postData.sort((a, b) => ((a.date < b.date) ? 1 : -1));
   // return the filenames as a prop
   return {
     props: {
