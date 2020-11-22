@@ -1,8 +1,7 @@
 import React from 'react';
 import {
-  Box, AspectRatio, Heading, Text,
+  Box, AspectRatio, Heading, Text, Img,
 } from '@chakra-ui/react';
-import Image from 'next/image';
 
 import Link from './Link';
 
@@ -22,7 +21,7 @@ const PostLink = ({
   >
     <Box width="100%">
       <AspectRatio ratio={960 / 600} bgColor="brand.primary" borderWidth="2px" borderColor="gray.200">
-        <Image
+        <Img
           src={thumb}
           layout="fill"
           alt={`${title} logo`}
