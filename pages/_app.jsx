@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react';
 
 import theme from '../lib/theme';
-import { Footer, ResponsiveIndicator, Navbar } from '../components';
+import { Footer, Navbar } from '../components';
 
 const AppContainer = ({ Component, pageProps }) => {
   // ideally this would use the useTheme hook.
@@ -39,7 +39,7 @@ const AppContainer = ({ Component, pageProps }) => {
       </Box>
       <Footer />
       <Box bg="brand.secondary" color="rgba(255,255,255,0.5)" p="4" fontSize="sm">
-        <Heading fontSize="md">Boring nerd stuff:</Heading>
+        <Heading fontSize="md">Page data:</Heading>
         {JSON.stringify(pageProps)}
       </Box>
     </ChakraProvider>
