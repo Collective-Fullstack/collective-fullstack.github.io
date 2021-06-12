@@ -24,19 +24,19 @@ const HeadInfo = ({ title, ogText, byline }) => {
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="msapplication-TileColor" content={primaryColor} />
 
-      <meta name="title" content={`${title} | Collective Fullstack`} />
+      <meta name="title" content={title} />
       <meta name="description" content={ogDescription} />
       <meta name="theme-color" content={primaryColor} />
 
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://collective-fullstack.github.io" />
-      <meta property="og:title" content={`${title} | Collective Fullstack`} />
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={ogDescription} />
       <meta property="og:image" content={ogIMGURL} />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://collective-fullstack.github.io" />
-      <meta property="twitter:title" content={`${title} | Collective Fullstack`} />
+      <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={ogDescription} />
       <meta property="twitter:image" content={ogIMGURL} />
     </Head>
