@@ -5,7 +5,12 @@ import {
 } from '@chakra-ui/react';
 
 import theme from '../lib/theme';
-import { Footer, Navbar, Head } from '../components';
+import {
+  Footer,
+  Navbar,
+  Head,
+  FastImage
+} from '../components';
 
 const AppContainer = ({ Component, pageProps }) => {
   // ideally this would use the useTheme hook.
@@ -17,9 +22,14 @@ const AppContainer = ({ Component, pageProps }) => {
   const title = pageProps.isHomepage
     ? 'Collective Fullstack - Web Developers'
     : `${pageProps.heading.headline} | Collective Fullstack - Web Developers`;
+
+  const ogText = pageProps.isHomepage
+    ? 'cfHomepage'
+    : pageProps.heading.headline;
+
   return (
     <ChakraProvider theme={theme}>
-      <Head title={title} />
+      <Head title={title} ogText={ogText} byline={pageProps.heading.byline} />
       <Navbar isHomepage={pageProps.isHomepage} />
       {/* <ResponsiveIndicator /> */}
       {/* Comment ^ out on production builds */}

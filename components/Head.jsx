@@ -2,8 +2,15 @@ import React from 'react';
 import Head from 'next/head';
 import { useToken } from '@chakra-ui/react';
 
-const HeadInfo = ({ title }) => {
+const HeadInfo = ({ title, ogText, byline }) => {
   const primaryColor = useToken('colors', 'brand.primary');
+  const ogIMGURL = ogText === 'cfHomepage'
+    ? 'https://collective-fullstack.github.io/og.png'
+    : `https://og.darcylf.me/image.js?text=${encodeURIComponent(ogText)}&theme=cf`;
+  const ogDescription = ogText === 'cfHomepage'
+    ? 'We are a small two person freelance company who specialize in web development. Previous work includes building everything from environmental monitoring systems to chat clients.'
+    : `Collective Fullstack made ${ogText}: ${byline}`;
+
   return (
     <Head key="Head-main">
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -17,21 +24,21 @@ const HeadInfo = ({ title }) => {
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="msapplication-TileColor" content={primaryColor} />
 
-      <meta name="title" content="Collective Fullstack - Web Developers" />
-      <meta name="description" content="We are a small two person freelance company who specialize in web development. Previous work includes building everything from environmental monitoring systems to chat clients." />
+      <meta name="title" content={`${title} | Collective Fullstack`} />
+      <meta name="description" content={ogDescription} />
       <meta name="theme-color" content={primaryColor} />
 
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://collective-fullstack.github.io" />
-      <meta property="og:title" content="Collective Fullstack - Web Developers" />
-      <meta property="og:description" content="We are a small two person freelance company who specialize in web development. Previous work includes building everything from environmental monitoring systems to chat clients." />
-      <meta property="og:image" content="https://collective-fullstack.github.io/og.png" />
+      <meta property="og:title" content={`${title} | Collective Fullstack`} />
+      <meta property="og:description" content={ogDescription} />
+      <meta property="og:image" content={ogIMGURL} />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://collective-fullstack.github.io" />
-      <meta property="twitter:title" content="Collective Fullstack - Web Developers" />
-      <meta property="twitter:description" content="We are a small two person freelance company who specialize in web development. Previous work includes building everything from environmental monitoring systems to chat clients." />
-      <meta property="twitter:image" content="https://collective-fullstack.github.io/og.png" />
+      <meta property="twitter:title" content={`${title} | Collective Fullstack`} />
+      <meta property="twitter:description" content={ogDescription} />
+      <meta property="twitter:image" content={ogIMGURL} />
     </Head>
   );
 };

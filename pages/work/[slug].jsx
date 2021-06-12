@@ -44,7 +44,7 @@ function workPage({ post }) {
 
 export async function getStaticPaths() {
   // onceagain, get the slugs
-  const allPosts = getAllPosts(['slug']);
+  const allPosts = await getAllPosts(['slug']);
 
   return {
     paths: allPosts.map((post) => ({
