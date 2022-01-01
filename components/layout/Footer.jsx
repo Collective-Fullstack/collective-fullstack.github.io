@@ -44,7 +44,7 @@ export default function Footer() {
         </SimpleGrid>
         <Box fontSize="md" textAlign={['left', null, 'right']}>
           <Text>
-            Copyright (c) 2020 Collective Fullstack
+            Copyright (c) 2022 Collective Fullstack
           </Text>
           <Text mt={3}>
             Collective Fullstack acknowledges the Traditional Custodians of the land
