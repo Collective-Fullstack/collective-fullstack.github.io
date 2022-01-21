@@ -9,8 +9,24 @@ import { Link } from '../../components';
 
 function workPage({ post }) {
   const Images = post.images ? post.images.map((i) => (
-    <Box borderWidth="2px" borderColor="gray.200" key={`sImage-${i.src}`}>
-      <Img src={i.src} alt={i.alt} width="100%" />
+    <Box key={`sImage-${i.src}`}>
+      <Box borderWidth="2px" borderColor="gray.200">
+        <Img src={i.src} alt={i.alt} width="100%" />
+      </Box>
+      <Text
+        textAlign="center"
+        color="gray.500"
+        marginTop={1}
+        fontSize="md"
+        fontStyle="italic"
+        _before={{
+          content: '"↑"',
+          fontStyle: 'normal',
+          marginRight: 2,
+        }}
+      >
+        {i.alt}
+      </Text>
     </Box>
   )) : '';
 
