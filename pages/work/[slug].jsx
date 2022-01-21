@@ -9,11 +9,10 @@ import { Link } from '../../components';
 
 function workPage({ post }) {
   const Images = post.images ? post.images.map((i) => (
-    <Box key={`sImage-${i.src}`}>
-      <Box borderWidth="2px" borderColor="gray.200">
-        <Img src={i.src} alt={i.alt} width="100%" />
-      </Box>
+    <Box key={`sImage-${i.src}`} as="figure">
+      <Img src={i.src} alt={i.alt} width="100%" sx={{ borderWidth: '2px', borderColor: 'gray.200' }}/>
       <Text
+        as="figcaption"
         textAlign="center"
         color="gray.500"
         marginTop={1}
