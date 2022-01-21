@@ -55,7 +55,7 @@ const AppContainer = ({ Component, pageProps }) => {
       <Footer />
       <Box bg="brand.secondary" color="rgba(255,255,255,0.5)" p={8} fontSize="sm">
         <details>
-          <summary style={{cursor: 'pointer'}}>
+          <summary style={{ cursor: 'pointer' }}>
             Page data
           </summary>
           {JSON.stringify(pageProps)}
