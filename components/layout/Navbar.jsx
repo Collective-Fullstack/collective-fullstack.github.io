@@ -105,6 +105,8 @@ const Navbar = () => {
                   fontWeight="bold"
                   mr={2}
                   _hover={{ opacity: 0.6 }}
+                  paddingY={2}
+                  display="block"
                 >
                   {i[0]}
                 </Link>
