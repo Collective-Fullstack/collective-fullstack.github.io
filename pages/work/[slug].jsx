@@ -31,30 +31,28 @@ function workPage({ post }) {
   )) : '';
 
   return (
-    <Box fontSize={['md', 'lg']}>
-      <Stack spacing={4} width={['100%', '100%', '70%']} mx="auto">
-        <Img src={post.mainImage} />
-        <ReactMarkdown>{post.content}</ReactMarkdown>
-        {Images}
-        <Box>
-          <Text>
-            <b>Date:</b>
-            {' '}
-            {post.date}
-          </Text>
-          <Text>
-            <b>Skills: </b>
-            {post.skills}
-          </Text>
-          <Text>
-            <b>Links: </b>
-            {post.links.map((i) => (
-              <Link href={i.href} textDecoration="underline" mr={2} key={i.href} isExternal>{i.text}</Link>
-            ))}
-          </Text>
-        </Box>
-      </Stack>
-    </Box>
+    <Stack fontSize={['md', 'lg']} spacing={4} width={['100%', '100%', '70%']} mx="auto">
+      <Img src={post.mainImage} />
+      <ReactMarkdown>{post.content}</ReactMarkdown>
+      {Images}
+      <Box>
+        <Text>
+          <b>Date:</b>
+          {' '}
+          {post.date}
+        </Text>
+        <Text>
+          <b>Skills: </b>
+          {post.skills}
+        </Text>
+        <Text>
+          <b>Links: </b>
+          {post.links.map((i) => (
+            <Link href={i.href} textDecoration="underline" mr={2} key={i.href} isExternal>{i.text}</Link>
+          ))}
+        </Text>
+      </Box>
+    </Stack>
   );
 }
 
