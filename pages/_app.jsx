@@ -9,7 +9,7 @@ import {
   Footer,
   Navbar,
   Head,
-  FastImage
+  FastImage,
 } from '../components';
 
 const AppContainer = ({ Component, pageProps }) => {
@@ -39,13 +39,19 @@ const AppContainer = ({ Component, pageProps }) => {
         backgroundSize="22px 22px"
       >
         <Box p={[4, 8]}>
-          <Flex minHeight="60vh" pt="50vh" alignItems="flex-end" mb={[4, 8]}>
-            <Box width={['100%', '90%', '80%', '60%']}>
-              <Heading as="h1" size="3xl" mb={1}>{pageProps.heading.headline}</Heading>
-              <Text fontSize={['lg', 'xl']}>
-                {pageProps.heading.byline}
-              </Text>
-            </Box>
+          <Flex
+            minHeight="60vh"
+            pt="50vh"
+            justifyContent="flex-end"
+            mb={[4, 8]}
+            width={['100%', '90%', '80%', '60%']}
+            as="header"
+            flexDirection="column"
+          >
+            <Heading as="h1" size="3xl" mb={1}>{pageProps.heading.headline}</Heading>
+            <Text fontSize={['lg', 'xl']} role="doc-subtitle">
+              {pageProps.heading.byline}
+            </Text>
           </Flex>
           <Box backgroundColor="text" color="background" p={[4, 8]}>
             <Component {...pageProps} />
