@@ -54,8 +54,12 @@ const AppContainer = ({ Component, pageProps }) => {
       </Box>
       <Footer />
       <Box bg="brand.secondary" color="rgba(255,255,255,0.5)" p={8} fontSize="sm">
-        <Heading fontSize="md">Page data:</Heading>
-        {JSON.stringify(pageProps)}
+        <details>
+          <summary style={{cursor: 'pointer'}}>
+            Page data
+          </summary>
+          {JSON.stringify(pageProps)}
+        </details>
       </Box>
     </ChakraProvider>
   );
