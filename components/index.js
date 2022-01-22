@@ -10,3 +10,4 @@ export { default as Link } from './Link';
 export { default as PostLink } from './PostLink';
 export { default as Head } from './Head';
 export { default as Quote } from './Quote';
+export { default as NextLink } from './NextLink';

@@ -5,9 +5,9 @@ import {
 } from '@chakra-ui/react';
 
 import { getAllPosts, getPostBySlug } from '../../lib/api';
-import { Link, Quote } from '../../components';
+import { Link, Quote, NextLink } from '../../components';
 
-function workPage({ post }) {
+function workPage({ post, next }) {
   const Images = post.images ? post.images.map((i) => (
     <Box key={`sImage-${i.src}`} as="figure">
       <Img src={i.src} alt={i.alt} width="100%" sx={{ border: '2px solid', borderColor: 'gray.200' }} />
@@ -40,7 +40,7 @@ function workPage({ post }) {
       </ReactMarkdown>
       {post.quote ? <Quote quoteText={post.quote.text} quotee={post.quote.quotee} /> : null}
       {Images}
-      <Box>
+      <Box paddingBottom={3}>
         <Text>
           <b>Date:</b>
           {' '}
@@ -57,6 +57,7 @@ function workPage({ post }) {
           ))}
         </Text>
       </Box>
+      <NextLink href={`/work/${next.slug}`} img={next.mainImage} text={next.leadIn} title={next.title} />
     </Stack>
   );
 }
@@ -89,6 +90,18 @@ export async function getStaticProps({ params }) {
     'links',
     'quote',
   ]);
+
+  const allPosts = await getAllPosts(['slug', 'mainImage', 'leadIn', 'title']);
+  let currentIndex;
+  allPosts.every((i, ix) => {
+    if (i.slug === params.slug) {
+      currentIndex = ix;
+      return false;
+    }
+    return true;
+  });
+
+  const next = allPosts.length - 1 === currentIndex ? allPosts[0] : allPosts[currentIndex + 1];
   return {
     props: {
       heading: {
@@ -97,6 +110,9 @@ export async function getStaticProps({ params }) {
       },
       post: {
         ...post,
+      },
+      next: {
+        ...next,
       },
       isHomepage: false,
     },
