@@ -19,6 +19,9 @@ links:
       href: "http://mathsender.fun"
 date: "2020.08"
 skills: Website design, Website development, Python development.
+quote: 
+    text: MathSender is actually quite good.
+    quotee: Mr F, a teacher at John Monash Science School
 ---
 
 
