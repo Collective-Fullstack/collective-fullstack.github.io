@@ -20,6 +20,9 @@
   - `href`: Where the URL should go.
 - `date`: The month when the project was done. Should be stored as a string in the format: `YYYY.MM`.
 - `skills`: Just kinda, what skills were used in the project.
+- `quote`: If there is a quote from the client, this is where it goes
+  - `text`: the actual quote text
+  - `quotee`: the person being quoted
 
 ###### Directory structure:
 - public: gets passed through to the root dir of the build version.

@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react';
 
 import { getAllPosts, getPostBySlug } from '../../lib/api';
-import { Link } from '../../components';
+import { Link, Quote } from '../../components';
 
 function workPage({ post }) {
   const Images = post.images ? post.images.map((i) => (
@@ -33,6 +33,7 @@ function workPage({ post }) {
     <Stack fontSize={['md', 'lg']} spacing={4} width={['100%', '100%', '70%']} mx="auto">
       <Img src={post.mainImage} />
       <ReactMarkdown>{post.content}</ReactMarkdown>
+      {post.quote ? <Quote quoteText={post.quote.text} quotee={post.quote.quotee} /> : null}
       {Images}
       <Box>
         <Text>
@@ -81,6 +82,7 @@ export async function getStaticProps({ params }) {
     'date',
     'skills',
     'links',
+    'quote',
   ]);
   return {
     props: {
