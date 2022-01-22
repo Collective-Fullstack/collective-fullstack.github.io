@@ -57,7 +57,7 @@ function workPage({ post, next }) {
           ))}
         </Text>
       </Box>
-      <NextLink href={`/work/${next.slug}`} img={next.mainImage} text={next.leadIn} title={next.title} />
+      <NextLink href={`/work/${next.slug}`} img={next.thumb} text={next.leadIn} title={next.title} />
     </Stack>
   );
 }
@@ -91,7 +91,7 @@ export async function getStaticProps({ params }) {
     'quote',
   ]);
 
-  const allPosts = await getAllPosts(['slug', 'mainImage', 'leadIn', 'title']);
+  const allPosts = await getAllPosts(['slug', 'thumb', 'leadIn', 'title']);
   let currentIndex;
   allPosts.every((i, ix) => {
     if (i.slug === params.slug) {
