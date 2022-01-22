@@ -32,7 +32,7 @@ function workPage({ post, next }) {
 
   return (
     <Stack fontSize={['md', 'lg']} spacing={4} width={['100%', '100%', '70%']} mx="auto">
-      <Img src={post.mainImage[0]} fallbackSrc={post.mainImage[1]} backgroundImage={`url("${post.mainImage[1]}`} backgroundSize="cover" height="100%" width="100%" />
+      <Img src={post.mainImage} backgroundSize="cover" height="100%" width="100%" />
       <ReactMarkdown
         // eslint-disable-next-line react/jsx-props-no-spreading
         components={{ a: ({ node, ...props }) => <Link {...props} isExternal textDecoration="underline" /> }}
