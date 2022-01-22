@@ -6,6 +6,7 @@ import {
 
 import { getAllPosts, getPostBySlug } from '../../lib/api';
 import { Link, Quote, NextLink } from '../../components';
+// import blurhashToBase64 from '../../lib/blurhashToBase64';
 
 function workPage({ post, next }) {
   const Images = post.images ? post.images.map((i) => (
@@ -31,7 +32,7 @@ function workPage({ post, next }) {
 
   return (
     <Stack fontSize={['md', 'lg']} spacing={4} width={['100%', '100%', '70%']} mx="auto">
-      <Img src={post.mainImage} />
+      <Img src={post.mainImage[0]} fallbackSrc={post.mainImage[1]} backgroundImage={`url("${post.mainImage[1]}`} backgroundSize="cover" height="100%" width="100%" />
       <ReactMarkdown
         // eslint-disable-next-line react/jsx-props-no-spreading
         components={{ a: ({ node, ...props }) => <Link {...props} isExternal textDecoration="underline" /> }}
@@ -90,6 +91,16 @@ export async function getStaticProps({ params }) {
     'links',
     'quote',
   ]);
+
+  /* post.mainImage = [post.mainImage, await blurhashToBase64(post.mainImage)];
+
+  if (post.images) {
+    post.images.forEach(async (i, ix) => {
+      const blurhash = await blurhashToBase64(i.src);
+      console.log(`done image ${i.src}`);
+      post.images[ix] = { src: i.src, alt: i.alt, blurhash };
+    });
+  } */
 
   const allPosts = await getAllPosts(['slug', 'thumb', 'leadIn', 'title']);
   let currentIndex;
