@@ -9,7 +9,6 @@ import {
   Footer,
   Navbar,
   Head,
-  FastImage,
 } from '../components';
 
 const AppContainer = ({ Component, pageProps }) => {
