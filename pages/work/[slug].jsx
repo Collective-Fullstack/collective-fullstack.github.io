@@ -32,7 +32,12 @@ function workPage({ post }) {
   return (
     <Stack fontSize={['md', 'lg']} spacing={4} width={['100%', '100%', '70%']} mx="auto">
       <Img src={post.mainImage} />
-      <ReactMarkdown>{post.content}</ReactMarkdown>
+      <ReactMarkdown
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        components={{ a: ({ node, ...props }) => <Link {...props} isExternal textDecoration="underline" /> }}
+      >
+        {post.content}
+      </ReactMarkdown>
       {post.quote ? <Quote quoteText={post.quote.text} quotee={post.quote.quotee} /> : null}
       {Images}
       <Box>
