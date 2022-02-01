@@ -9,7 +9,7 @@ const HeadInfo = ({ title, ogText, byline }) => {
     : `https://og.darcylf.me/image.js?text=${encodeURIComponent(ogText)}&theme=cf`;
   const ogDescription = ogText === 'cfHomepage'
     ? 'We are a small two person freelance company who specialize in web development. Previous work includes building everything from environmental monitoring systems to chat clients.'
-    : `Collective Fullstack made ${ogText}: ${byline}`;
+    : `${ogText}: ${byline} | Collective Fullstack`;
 
   return (
     <Head key="Head-main">
