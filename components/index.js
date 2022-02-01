@@ -11,3 +11,4 @@ export { default as PostLink } from './PostLink';
 export { default as Head } from './Head';
 export { default as Quote } from './Quote';
 export { default as NextLink } from './NextLink';
+export { default as Image } from './Image';
